@@ -76,7 +76,7 @@ sections_ordered = [
     ("dessert", "🍪"),
     ("special item", "🍯"),
     ("bundles", "🍩"),
-    ("Extras", "🧪")
+    ("extras", "🧪")
 ]
 
 for section, icon in sections_ordered:
