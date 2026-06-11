@@ -4,29 +4,29 @@ import streamlit as st
 menu = {
     "hot drinks": {
         "Earl Grey Tea": 50,
-        "Peppermint Tea"; 50,
-        "Jasmine Green Tea"; 50,
-        "Orange Ginseng Oolong Tea"; 50,
-        "Vanilla Chai Latte"; 50,
-        "Honey Lavender Latter"; 50,
-        "Cozy Cappuccino"; 50,
-        "Hot Chocolate"; 50
+        "Peppermint Tea": 50,
+        "Jasmine Green Tea": 50,
+        "Orange Ginseng Oolong Tea": 50,
+        "Vanilla Chai Latte": 50,
+        "Honey Lavender Latter": 50,
+        "Cozy Cappuccino": 50,
+        "Hot Chocolate": 50
     },
     "cold drinks": {
-       "berry hibiscus iced tea"; 50,
-       "saffron rose iced tea"; 50,
-       "violet’s colani"; 50,
-       "iced coffee"; 50,
-       "horchata"; 50,
-       "green smoothie"; 50
+       "berry hibiscus iced tea": 50,
+       "saffron rose iced tea": 50,
+       "violet’s colani": 50,
+       "iced coffee": 50,
+       "horchata": 50,
+       "green smoothie": 50
     },
     "mains": {
-        "avocado toast w/ fruit salad"; 120,
-        "steak & pepper omelet w/ hashbrowns"; 120,
-        "bacon, egg & cheese sandwich"; 120,
-        "chef salad & soup of the day"; 120,
-        "caprese sandwich & chips"; 120,
-        "chicken & waffles"; 120
+        "avocado toast w/ fruit salad": 120,
+        "steak & pepper omelet w/ hashbrowns": 120,
+        "bacon, egg & cheese sandwich": 120,
+        "chef salad & soup of the day": 120,
+        "caprese sandwich & chips": 120,
+        "chicken & waffles": 120
     },
     "dessert": {
        "caramel affogato ice cream": 100,
@@ -38,11 +38,11 @@ menu = {
        "little teapot brownie": 250
     },
     "bundles": {
-        "Number 1: 10 mains & 10 drinks"; 1700,
-        "Number 2: 20 mains & 20 drinks"; 3400,
-        "Number 3: 10 drinks, 6 mains, 4 desserts"; 1620,
-        "Number 4: 10 drinks, 6 mains, 4 specials"; 2220,
-        "donut box: cinnamon dolce cronut, strawberry glaze & boston cream"; 600
+        "Number 1: 10 mains & 10 drinks": 1700,
+        "Number 2: 20 mains & 20 drinks": 3400,
+        "Number 3: 10 drinks, 6 mains, 4 desserts": 1620,
+        "Number 4: 10 drinks, 6 mains, 4 specials": 2220,
+        "donut box: cinnamon dolce cronut, strawberry glaze & boston cream": 600
     },
     "extras": {
         "Preservatives": 50
