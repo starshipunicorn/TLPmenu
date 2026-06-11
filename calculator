@@ -1,0 +1,90 @@
+import streamlit as st
+
+# 🛸 Menu based on Sightings image
+menu = {
+    "Snackies": {
+        "Classic Cheesecake": 95,
+        "Molten Lava Cake": 95,
+        "Brown Butter Blondie": 95,
+        "Ice Cream Flight": 95,
+        "Warm Choccy Chip Cookies": 95,
+        "Starry S'More Shake": 200
+    },
+    "Cronches": {
+        "Smash Burger": 120,
+        "Pulled Pork Sandwich": 120,
+        "Buffalo Wings": 100,
+        "Onion Rings": 95,
+        "Pepperoni Flatbread": 110,
+        "Mac & Cheese Bites": 100,
+        "Loaded Nachos": 100,
+        "BBQ Chicken Sandwich": 120,
+        "Veggie Burger": 120,
+        "Mozzarella Sticks": 100,
+        "Street Tacos": 100
+    },
+    "Drinkies": {
+        "Zero-G Cola": 50,
+        "Dark Cherry Spritz": 50,
+        "House Iced Tea": 50,
+        "Mineral Water": 50,
+        "Late Shift": 50,
+        "Galactic Grape Soda": 50
+    },
+    "Fun Drinkies": {
+        "Vodka Soda": 120,
+        "Draft Lager": 100,
+        "Gin & Tonic": 100,
+        "Midnight Martini": 120
+    },
+    "Extras": {
+        "Preservatives": 100
+    }
+}
+
+# 🧮 Total Calculation Logic
+def calculate_total(order, discount=0, fee=0):
+    subtotal = sum(menu[cat][item] * qty for (cat, item), qty in order.items())
+    discount_amt = subtotal * (discount / 100)
+    fee_amt = (subtotal - discount_amt) * (fee / 100)
+    total = subtotal - discount_amt + fee_amt
+    return round(subtotal, 2), round(total, 2)
+
+# 🌌 App Layout
+st.set_page_config(page_title="WTF Calculator", layout="centered")
+st.title("👽 WTF Order Calculator 🛸")
+st.markdown("_Well That's Fire_")
+
+st.sidebar.title("🛠️ Settings")
+discount = st.sidebar.slider("Discount (%)", 0, 100, 0)
+fee = st.sidebar.slider("Service Fee (%)", 0, 100, 0)
+
+order = {}
+
+# 📱 Mobile-Friendly Expandable Sections
+sections_ordered = [
+    ("Snackies", "🥓"),
+    ("Cronches", "🌮"),
+    ("Drinkies", "🥤"),
+    ("Fun Drinkies", "🍸"),
+    ("Extras", "🧪")
+]
+
+for section, icon in sections_ordered:
+    with st.expander(f"{icon} {section}", expanded=True):
+        for item, price in menu[section].items():
+            qty = st.number_input(f"{item} (${price})", min_value=0, max_value=500, step=1, key=f"{section}_{item}")
+            if qty > 0:
+                order[(section, item)] = qty
+
+# 🚀 Calculate Button
+if st.button("🚀 Calculate Total"):
+    subtotal, total = calculate_total(order, discount, fee)
+
+    st.markdown("---")
+    st.markdown(f"### 🌌 Subtotal: **${subtotal}**")
+    st.markdown(f"### 💫 Total After Discounts/Fees: **${total}**")
+
+    st.subheader("📦 Order Summary")
+    for (cat, item), qty in order.items():
+        st.markdown(f"- **{item}** ({cat}) × {qty} @ ${menu[cat][item]} each")
