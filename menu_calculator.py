@@ -59,7 +59,7 @@ def calculate_total(order, discount=0, fee=0):
 
 # 🌌 App Layout
 st.set_page_config(page_title="Little Teapot Calculator", layout="centered")
-st.title("👽 LTP Order Calculator 🛸")
+st.title("☕ LTP Order Calculator 🍵")
 st.markdown("_Little Teapot_")
 
 st.sidebar.title("🛠️ Settings")
